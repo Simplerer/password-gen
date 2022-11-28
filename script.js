@@ -7,6 +7,20 @@ function generatePassword() {
   var letters = "abcdefghijklmnopqrstuvwxyz";
   var bigletters = letters.toUpperCase();
   var nums = "1234567890"
+
+  // YOUR CODE GOES HERE
+  var isUppercase = confirm("Would you like to use uppercase?");  //confirm() broswer issues confirmation message once button is activated
+  var isLowercase = false;
+  var isSpecial = false;
+  var isNumber = false;
+
+  if (isUppercase) {
+    console.log('uppercase')
+  }
+
+//Grab random letters
+  return ";"
+
 }
 
 
