@@ -9,17 +9,27 @@ function generatePassword() {
   var nums = "1234567890"
 
   // YOUR CODE GOES HERE
-  var isUppercase = confirm("Would you like to use uppercase?");  //confirm() broswer issues confirmation message once button is activated
-  var isLowercase = false;
-  var isSpecial = false;
-  var isNumber = false;
+  var isUppercase = confirm("Include uppercase letters in this password?");  //confirm() broswer issues confirmation message once button is activated
+  var isLowercase = confirm("Include uppercase letters in this password?");
+  var isSpecial = confirm("Include special characters in this password?");
+  var isNumber = confirm("Include numbers in this password?");
 
+  if (isSpecial) {
+    console.log(characters)
+  }
+  if (isLowercase) {
+    console.log(letters)
+  }
   if (isUppercase) {
-    console.log('uppercase')
+    console.log(bigletters)  //if log true, which the confirm achieves, then run console.log of that associated variable
+  }
+  if (isNumber) {
+    console.log(nums)
   }
 
+
 //Grab random letters
-  return ";"
+  return 
 
 }
 
