@@ -41,7 +41,9 @@ function writePassword() {
 
   passwordText.value = password;
 
+  return password
+
 }
 
-// Add event listener to generate button
+// Add event listener to generate button                      Up top generateBtn is established as where in HTML is affected, in this instance the generate password button. Then using aEList method, on clicking that item, the function writePassword is initiated.
 generateBtn.addEventListener("click", writePassword);
