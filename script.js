@@ -10,8 +10,15 @@ function generatePassword() {
   var nums = "1234567890"
   var grabBag = ""
   var mixer = Math.floor(Math.random() * grabBag.length);
+  var pLength = 0
 
   // YOUR CODE GOES HERE
+  
+  var charLength = prompt("How many characters? Pick between 8 and 128!")
+
+
+  if (charLength >= 8 && charLength <= 128) {
+    
   var isUppercase = confirm("Include uppercase letters in this password?");  //confirm() broswer issues confirmation message once button is activated
   var isLowercase = confirm("Include lowercase letters in this password?");
   var isSpecial = confirm("Include special characters in this password?");
@@ -19,27 +26,27 @@ function generatePassword() {
 
   if (isSpecial) {
     grabBag = characters + grabBag
-    console.log(grabBag)
-
   }
   if (isLowercase) {
     grabBag = letters + grabBag
-    console.log(grabBag)
   }
   if (isUppercase) {
     grabBag = bigletters + grabBag
-    console.log(grabBag)
   }
   if (isNumber) {
     grabBag = nums + grabBag
-    console.log(grabBag)
   }
+    console.log(grabBag)
 
-  console.log(grabBag)
+  
 
 //Grab random letters
   return mixer
-
+} 
+else {
+  alert("Pick between 8 and 128 please!")
+  generatePassword()
+}
 }
 
 
