@@ -30,23 +30,19 @@ function generatePassword() {
 
   
   if (isSpecial) {
-    grabBag = grabBag.concat(characters)
+    grabBag = grabBag.concat(characters);
   }
   if (isLowercase) {
-    grabBag = grabBag.concat(letters)
+    grabBag = grabBag.concat(letters);
   }
   if (isUppercase) {
-    grabBag = grabBag.concat(bigletters)
+    grabBag = grabBag.concat(bigletters);
   }
   if (isNumber) {
-    grabBag = grabBag.concat(nums)
+    grabBag = grabBag.concat(nums);
   }
-    console.log(grabBag)
+    
 
-
-
-console.log(mixer)
-console.log(charLength)
 
 //Grab random letters
 
