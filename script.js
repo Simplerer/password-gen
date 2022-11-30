@@ -4,18 +4,17 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {
-  var characters = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";  //These set variables for different parameters to be included
+  
+  var characters = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~";  //These set variables for password
   var letters = "abcdefghijklmnopqrstuvwxyz";
   var bigletters = letters.toUpperCase();
   var nums = "1234567890"
-  var grabBag = ""
-  var mixer = Math.floor(Math.random() * grabBag.length);
-  var pLength = 0
+  var mixer = "";
+  var grabBag = "";
+ 
 
-  // YOUR CODE GOES HERE
   
-  var charLength = prompt("How many characters? Pick between 8 and 128!")
-
+  var charLength = prompt("How many characters? Pick between 8 and 128!");
 
   if (charLength >= 8 && charLength <= 128) {
     
@@ -23,24 +22,41 @@ function generatePassword() {
   var isLowercase = confirm("Include lowercase letters in this password?");
   var isSpecial = confirm("Include special characters in this password?");
   var isNumber = confirm("Include numbers in this password?");
+  
+  if (!isUppercase && !isLowercase && !isSpecial && !isNumber) {
+    alert("You need to pick something!")
+    return generatePassword();
+  }
 
+  
   if (isSpecial) {
-    grabBag = characters + grabBag
+    grabBag = grabBag.concat(characters)
   }
   if (isLowercase) {
-    grabBag = letters + grabBag
+    grabBag = grabBag.concat(letters)
   }
   if (isUppercase) {
-    grabBag = bigletters + grabBag
+    grabBag = grabBag.concat(bigletters)
   }
   if (isNumber) {
-    grabBag = nums + grabBag
+    grabBag = grabBag.concat(nums)
   }
     console.log(grabBag)
 
-  
+
+
+console.log(mixer)
+console.log(charLength)
 
 //Grab random letters
+
+
+for (i = 0; i <= charLength; i++) {                                  // the random index
+  var randomIndex = Math.floor(Math.random() * grabBag.length);      // grabbag length is what was accepted
+    mixer += grabBag[randomIndex];                                   // random 0-.99 * length || floor makes a whole number
+}                                                                    // this becomes the random index that grabs from the grabbag, number of times untill i=0
+
+  
   return mixer
 } 
 else {
