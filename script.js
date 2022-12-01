@@ -15,6 +15,10 @@ function generatePassword() {
 
   
   var charLength = prompt("How many characters? Pick between 8 and 128!");
+  if (!charLength) {
+    alert("You need to pick something!")
+    return generatePassword();
+  }
 
   if (charLength >= 8 && charLength <= 128) {
     
@@ -57,7 +61,7 @@ for (i = 0; i <= charLength; i++) {                                  // the rand
 } 
 else {
   alert("Pick between 8 and 128 please!")
-  generatePassword()
+  return generatePassword()
 }
 }
 
